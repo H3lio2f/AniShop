@@ -1,0 +1,455 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'comfortaa';
+    width: 100%;
+    height: auto;
+    background: #FFB844;
+    position: relative;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    height: 550px;
+    background: white;
+    position: relative;
+}
+header::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    bottom: -15px;
+    left: 0;
+    background: url('../assets/wave1.svg') no-repeat;
+    background-position: bottom;
+}
+
+.dogohero{
+    position: absolute;
+    bottom: -34px;
+    right: 278px;
+    z-index: 1;
+}
+
+header .top{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    align-items: center;
+}
+header .top .menu{
+  
+}
+header .top .menu a{
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 15px;
+    color: #3D4247;
+}
+
+header .top .logo{
+    grid-area: logo;
+    width: 120px;
+    
+}
+
+header .top .search{
+    width: 300px;
+    position: relative;
+    margin-left: 200px;
+}
+
+header .top .search img{
+    width: 15px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+
+header .top .search input{
+    width: 300px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.336);
+    border-radius: 40px;
+    background: transparent;
+}
+
+header .top .orders{
+    background: transparent;
+    border: 1px solid #FFB844;
+    border-radius: 30px;
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .top .orders span{
+    font-size: .8em;
+    color: #FFB844; 
+    font-weight: bolder;
+}
+header .top .orders p{
+    margin-left: 5px;
+    background: #FFB844;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .7em;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(61, 66, 71, 0.219);
+}
+
+
+header .hero{
+    width: 551px;
+    margin-top: 121px;
+    margin-left: 127px;
+    font-size: 1.5em;
+    color: #3D4247;
+}
+
+header .hero h2{
+    font-size: 0.8em;
+    margin-top: 10PX;
+    font-weight: lighter;
+}
+header .hero .order{
+    float: left;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-top: 35px;
+    color: white;
+    font-size: .7em;
+    background: #FFB844;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.301);
+}
+
+
+section.hightlight h2{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 1.8em;
+    color: white;
+}
+
+section.hightlight .dogs{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+section.hightlight .dogs .dog img{
+    width: 280px;
+    height: 290px;
+}
+section.hightlight .dogs .dog{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-top: 40px;
+    position: relative;
+    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+section.hightlight .dogs .dog:hover {
+    box-shadow: 0px 4px 28px rgb(204, 127, 3);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+
+section.hightlight .dogs .dog p{
+    color: white;
+}
+section.hightlight .dogs .dog p.name{
+    font-size: 1.4em;
+    font-weight: bolder;
+    line-height: 1;
+    margin-top: 10px;
+}
+section.hightlight .dogs .dog p.price{
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: white;
+    line-height: 2;
+}
+#info:target,
+#info1:target,
+#info2:target,
+#info3:target,
+#info4:target,
+#info5:target{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.952);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info,
+#info1,
+#info2,
+#info3,
+#info4,
+#info5{
+    position: relative;
+    display: none;
+  
+}
+
+
+#info:target .box,
+#info1:target .box,
+#info2:target .box,
+#info3:target .box,
+#info4:target .box,
+#info5:target .box{
+    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+    display: flex;
+    position: absolute;
+    width: 850px;
+    height: 450px;
+    top: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.582);
+}
+
+#info:target .box .img,
+#info1:target .box .img,
+#info2:target .box .img,
+#info3:target .box .img,
+#info4:target .box .img,
+#info5:target .box .img{
+    width: 450px;
+    height: 100%;
+    background: white;
+}
+
+#info:target .box .img img,
+#info1:target .box .img img,
+#info2:target .box .img img,
+#info3:target .box .img img,
+#info4:target .box .img img,
+#info5:target .box .img img{
+    height: 100%;
+    width: 100%;
+}
+
+#info:target .box .body,
+#info1:target .box .body,
+#info2:target .box .body,
+#info3:target .box .body,
+#info4:target .box .body,
+#info5:target .box .body{
+    padding: 10px;
+    width: 400px;
+    background: #FFB844;
+}
+
+#info:target .box .body a,
+#info1:target .box .body a,
+#info2:target .box .body a,
+#info3:target .box .body a,
+#info4:target .box .body a,
+#info5:target .box .body a{
+    position: absolute;
+    top: 12px;
+    right: 22px;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: white;;
+}
+
+#info:target .box .body h1,
+#info1:target .box .body h1,
+#info2:target .box .body h1,
+#info3:target .box .body h1,
+#info4:target .box .body h1,
+#info5:target .box .body h1{
+    color: white;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom:90px;
+}
+#info:target .box .body p strong,
+#info1:target .box .body p strong,
+#info2:target .box .body p strong,
+#info3:target .box .body p strong,
+#info4:target .box .body p strong,
+#info5:target .box .body p strong{
+    font-size: 1.2em;
+}
+#info:target .box .body p,
+#info1:target .box .body p,
+#info2:target .box .body p,
+#info3:target .box .body p,
+#info4:target .box .body p,
+#info5:target .box .body p{
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+#info:target .box .body .done,
+#info1:target .box .body .done,
+#info2:target .box .body .done,
+#info3:target .box .body .done,
+#info4:target .box .body .done,
+#info5:target .box .body .done{
+    margin-top: 39%;
+    float: left;
+    left: 70%;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    background: white;
+    color: #3D4247;
+    border-radius: 25px;
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.all{
+    color: white;
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 4%;
+    margin-left: 45%;
+    float: left;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+
+.all-pets .logo img{
+    width: 200px;
+    margin-top: 3%;
+    margin-left: 45%;
+}
+
+#done1{
+    width: 100%;
+    float: left;
+    top: 0;
+    left: 0;
+    background: red;
+    width: 400px;
+    height: 30px;
+    z-index: 1000;
+}
+
+#done1:target{
+    color: red;
+    display: none;
+    position: absolute;
+}
+.form{
+    background: white;
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form h1{
+    text-align: center;
+    margin-top: 30px;
+    color: #3D4247;
+    
+}
+
+.form input,
+.form textarea{
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #3D4247;
+}
+textarea{
+    padding: 10px;
+    height: 200px;
+}
+
+.form input{
+    height: 50px;
+    padding: 10px;
+}
+
+.form input[type="submit"]{
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 30px;
+    background: #FFB844;
+    color: white;
+    border: none;
+}
+
+.copyright{
+    width: 100%;
+    height: 40px;
+    float: left;
+    background: white;
+    text-align: center;
+    color: #3D4247; 
+}
+
+#login .form{
+    position: absolute;
+    top: 200px;;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+#login .form a{
+    background: white;
+    width: 500px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: #3D4247;
+    font-weight: bolder;
+}
+
+#login .form .signin{
+    background: none;
+}
